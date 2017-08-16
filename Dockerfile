@@ -6,6 +6,8 @@ EXPOSE 9090
 
 RUN conda install gensim && pip install Pyro4 && conda clean -a
 
+WORKDIR /usr/src/app
+
 COPY server.py .
 
 USER nobody
