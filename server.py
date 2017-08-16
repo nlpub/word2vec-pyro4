@@ -28,6 +28,10 @@ class PyroVectors:
         return self.wv.word_vec(word, use_norm)
 
     @Pyro4.expose
+    def words_vec(self, words, use_norm=False):
+        return {word: self.wv.word_vec(word, use_norm) for word in words if word in self.wv}
+
+    @Pyro4.expose
     def most_similar(self, positive=[], negative=[], topn=10, restrict_vocab=None, indexer=None):
         return self.wv.most_similar(positive, negative, topn, restrict_vocab, indexer)
 
