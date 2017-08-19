@@ -8,7 +8,7 @@ COPY requirements.txt /usr/src/app/
 
 RUN \
 conda install gensim && \
-pip install -r /usr/src/app/requirements.txt && \
+pip install --no-cache-dir -r /usr/src/app/requirements.txt && \
 conda clean -a
 
 WORKDIR /usr/src/app
