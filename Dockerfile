@@ -4,7 +4,12 @@ MAINTAINER Dmitry Ustalov <dmitry.ustalov@gmail.com>
 
 EXPOSE 9090
 
-RUN conda install gensim && pip install Pyro4 && conda clean -a
+COPY requirements.txt /usr/src/app/
+
+RUN \
+conda install gensim && \
+pip install -r /usr/src/app/requirements.txt && \
+conda clean -a
 
 WORKDIR /usr/src/app
 
