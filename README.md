@@ -5,8 +5,10 @@ This is a simple network service that serves the [Gensim]'s `KeyedVectors` via [
 [Gensim]: https://radimrehurek.com/gensim/
 [Pyro4]: https://pythonhosted.org/Pyro4/
 
-[![Docker Hub][docker_badge]][docker_link]
+[![Dependency Status][gemnasium_badge]][gemnasium_link] [![Docker Hub][docker_badge]][docker_link]
 
+[gemnasium_badge]: https://gemnasium.com/nlpub/word2vec-pyro4.svg
+[gemnasium_link]: https://gemnasium.com/nlpub/word2vec-pyro4
 [docker_badge]: https://img.shields.io/docker/pulls/nlpub/word2vec-pyro4.svg
 [docker_link]: https://hub.docker.com/r/nlpub/word2vec-pyro4/
 
