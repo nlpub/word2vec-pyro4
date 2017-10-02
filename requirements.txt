@@ -1,2 +1,2 @@
-gensim == 2.3.0
+gensim == 3.0.0
 Pyro4 == 4.62
