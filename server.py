@@ -5,10 +5,10 @@ from gensim.models import KeyedVectors
 import Pyro4
 
 parser = argparse.ArgumentParser(description='Word Vectors Served via Pyro4.', add_help=False)
-parser.add_argument('--w2v', required=True, type=argparse.FileType('rb'))
 parser.add_argument('--id',  default='w2v', type=str)
 parser.add_argument('-h', '--host', default='', type=str)
 parser.add_argument('-p', '--port', default=9090, type=int)
+parser.add_argument('w2v', type=argparse.FileType('rb'))
 args = parser.parse_args()
 
 Pyro4.config.SERIALIZERS_ACCEPTED = {'pickle'}

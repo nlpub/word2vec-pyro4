@@ -17,4 +17,4 @@ COPY server.py .
 
 USER nobody
 
-CMD ["python", "server.py", "--w2v", "/usr/src/app/w2v.bin"]
+CMD ["python", "server.py", "/usr/src/app/w2v.bin"]
