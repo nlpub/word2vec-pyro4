@@ -16,7 +16,7 @@ This is a simple network service that serves the [Gensim]'s `KeyedVectors` via [
 
 ```shell
 $ ./server.py
-usage: server.py [--id ID] [-h HOST] [-p PORT] w2v
+usage: server.py [--id ID] [--no-sims] [-h HOST] [-p PORT] w2v
 ```
 
 The only mandatory parameter, `w2v`, specifies the path to the word vectors in the [word2vec](https://code.google.com/archive/p/word2vec/) format. By default, the server listens to any network interface on the port 9090.

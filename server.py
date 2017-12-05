@@ -6,6 +6,7 @@ import Pyro4
 
 parser = argparse.ArgumentParser(description='Word Vectors Served via Pyro4.', add_help=False)
 parser.add_argument('--id',  default='w2v', type=str)
+parser.add_argument('--no-sims', dest='sims', action='store_false')
 parser.add_argument('-h', '--host', default='', type=str)
 parser.add_argument('-p', '--port', default=9090, type=int)
 parser.add_argument('w2v', type=argparse.FileType('rb'))
@@ -15,7 +16,9 @@ Pyro4.config.SERIALIZERS_ACCEPTED = {'pickle'}
 Pyro4.config.SERIALIZER = 'pickle'
 
 wv = KeyedVectors.load_word2vec_format(args.w2v, binary=True, unicode_errors='ignore')
-wv.init_sims(replace=True)
+
+if args.sims:
+    wv.init_sims(replace=True)
 
 # This is an adapter for the KeyedVectors class.
 # Unfortunately, it is not possible to expose the __getitem__ method.
