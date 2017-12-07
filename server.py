@@ -6,6 +6,7 @@ import Pyro4
 
 parser = argparse.ArgumentParser(description='Word Vectors Served via Pyro4.', add_help=False)
 parser.add_argument('--id',  default='w2v', type=str)
+parser.add_argument('--no-binary', dest='binary', action='store_false')
 parser.add_argument('--no-sims', dest='sims', action='store_false')
 parser.add_argument('-h', '--host', default='', type=str)
 parser.add_argument('-p', '--port', default=9090, type=int)
@@ -15,7 +16,7 @@ args = parser.parse_args()
 Pyro4.config.SERIALIZERS_ACCEPTED = {'pickle'}
 Pyro4.config.SERIALIZER = 'pickle'
 
-wv = KeyedVectors.load_word2vec_format(args.w2v, binary=True, unicode_errors='ignore')
+wv = KeyedVectors.load_word2vec_format(args.w2v, binary=args.binary, unicode_errors='ignore')
 
 if args.sims:
     wv.init_sims(replace=True)
