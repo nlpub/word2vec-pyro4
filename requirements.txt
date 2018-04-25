@@ -1,2 +1,2 @@
-gensim == 3.2.0
-Pyro4 == 4.63
+gensim == 3.4.0
+Pyro4 == 4.71
