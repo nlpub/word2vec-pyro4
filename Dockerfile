@@ -7,7 +7,7 @@ EXPOSE 9090
 COPY requirements.txt /usr/src/app/
 
 RUN \
-conda install gensim && \
+conda install -y gensim pyemd && \
 pip install --no-cache-dir -r /usr/src/app/requirements.txt && \
 conda clean -a
 
