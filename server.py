@@ -68,6 +68,10 @@ class PyroVectors:
         return self.wv.n_similarity(ws1, ws2)
 
     @Pyro4.expose
+    def wmdistance(self, document1, document2):
+        return self.wv.wmdistance(document1, document2)
+
+    @Pyro4.expose
     @property
     def syn0(self):
         return self.wv.syn0
@@ -91,11 +95,6 @@ class PyroVectors:
     @property
     def vector_size(self):
         return self.wv.vector_size
-
-    @Pyro4.expose
-    @property
-    def wmdistance(self, document1, document2):
-        return self.wv.wmdistance(document1, document2)
 
 daemon = Pyro4.Daemon(host=args.host, port=args.port)
 print(daemon.register(PyroVectors(wv), args.id), flush=True)
