@@ -92,6 +92,11 @@ class PyroVectors:
     def vector_size(self):
         return self.wv.vector_size
 
+    @Pyro4.expose
+    @property
+    def wmdistance(self, document1, document2):
+        return self.wv.wmdistance(document1, document2)
+
 daemon = Pyro4.Daemon(host=args.host, port=args.port)
 print(daemon.register(PyroVectors(wv), args.id), flush=True)
 daemon.requestLoop()
