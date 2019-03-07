@@ -3,12 +3,10 @@
 This is a simple network service that serves the [Gensim]'s `KeyedVectors` via [Pyro4].
 
 [Gensim]: https://radimrehurek.com/gensim/
-[Pyro4]: https://pythonhosted.org/Pyro4/
+[Pyro4]: https://pyro4.readthedocs.io/
 
-[![Dependency Status][gemnasium_badge]][gemnasium_link] [![Docker Hub][docker_badge]][docker_link]
+[![Docker Hub][docker_badge]][docker_link]
 
-[gemnasium_badge]: https://gemnasium.com/nlpub/word2vec-pyro4.svg
-[gemnasium_link]: https://gemnasium.com/nlpub/word2vec-pyro4
 [docker_badge]: https://img.shields.io/docker/pulls/nlpub/word2vec-pyro4.svg
 [docker_link]: https://hub.docker.com/r/nlpub/word2vec-pyro4/
 
@@ -42,10 +40,10 @@ w2v.word_vec('cat') # => array([…], dtype=float32)
 
 ## Disclaimer
 
-Note that this service should be running in a trusted environment since it uses the `pickle` serializer to handle the [NumPy](http://www.numpy.org/) arrays. This makes the system extremely vulnerable and even allows arbitrary code execution, which is [not recommended](http://pythonhosted.org/Pyro4/tipstricks.html#pyro-and-numpy) by the Pyro4 developers.
+Note that this service should be running in a trusted environment since it uses the `pickle` serializer to handle the [NumPy](http://www.numpy.org/) arrays. This makes the system extremely vulnerable and even allows arbitrary code execution, which is [not recommended](https://pyro4.readthedocs.io/en/stable/tipstricks.html#pyro-and-numpy) by the Pyro4 developers.
 
 ## Copyright
 
-Copyright (c) 2017 [Dmitry Ustalov]. See LICENSE for details.
+Copyright (c) 2017&ndash;2019 [Dmitry Ustalov]. See LICENSE for details.
 
-[Dmitry Ustalov]: https://ustalov.com/
+[Dmitry Ustalov]: https://github.com/dustalov
