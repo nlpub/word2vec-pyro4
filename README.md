@@ -1,4 +1,4 @@
-# Word Vectors Served via Pyro4.
+# Word Vectors Served via Pyro4
 
 This is a simple network service that serves the [Gensim]'s `KeyedVectors` via [Pyro4].
 
@@ -22,9 +22,9 @@ The only mandatory parameter, `w2v`, specifies the path to the word vectors in t
 For instance, the following pre-trained vectors are available:
 
 * English: [Google News](https://code.google.com/archive/p/word2vec/), [GloVe](https://nlp.stanford.edu/projects/glove/), [fastText](https://github.com/facebookresearch/fastText/blob/master/pretrained-vectors.md);
-* Russian: [Russian Distributional Thesaurus](http://russe.nlpub.ru/downloads/#rdt-russian-distributional-thesaurus), [RusVectōrēs](http://rusvectores.org/ru/).
+* Russian: [Russian Distributional Thesaurus](https://russe.nlpub.ru/downloads/#rdt-russian-distributional-thesaurus), [RusVectōrēs](https://rusvectores.org/ru/).
 
-Note that the Docker image is based on [Anaconda 3](https://hub.docker.com/r/continuumio/miniconda3/) for performance reasons. The image is designed under the assumption that the vectors are mounted as `/usr/src/app/w2v.bin`.
+The image is designed under the assumption that the vectors are mounted as `/usr/src/app/w2v.bin`.
 
 ## Accessing
 
@@ -40,10 +40,10 @@ w2v.word_vec('cat') # => array([…], dtype=float32)
 
 ## Disclaimer
 
-Note that this service should be running in a trusted environment since it uses the `pickle` serializer to handle the [NumPy](http://www.numpy.org/) arrays. This makes the system extremely vulnerable and even allows arbitrary code execution, which is [not recommended](https://pyro4.readthedocs.io/en/stable/tipstricks.html#pyro-and-numpy) by the Pyro4 developers.
+Note that this service should be running in a trusted environment since it uses the `pickle` serializer to handle the [NumPy](https://www.numpy.org/) arrays. This makes the system extremely vulnerable and even allows arbitrary code execution, which is [not recommended](https://pyro4.readthedocs.io/en/stable/tipstricks.html#pyro-and-numpy) by the Pyro4 developers.
 
 ## Copyright
 
-Copyright (c) 2017&ndash;2019 [Dmitry Ustalov]. See LICENSE for details.
+Copyright (c) 2017&ndash;2021 [Dmitry Ustalov]. See LICENSE for details.
 
 [Dmitry Ustalov]: https://github.com/dustalov
