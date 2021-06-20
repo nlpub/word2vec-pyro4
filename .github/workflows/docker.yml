@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  aword2vec-pyro4:
+  word2vec-pyro4:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
