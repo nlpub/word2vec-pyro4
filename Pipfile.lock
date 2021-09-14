@@ -85,11 +85,11 @@
         },
         "pyro4": {
             "hashes": [
-                "sha256:46847ca703de3f483fbd0b2d22622f36eff03e6ef7ec7704d4ecaa3964cb2220",
-                "sha256:f195a4a9403f58807e66ca269c771e1d268064945f65cfbbf59a1feb12a1695f"
+                "sha256:589e233511b620884dd115d0ae51dc2e8bd8eb5deb255b7dab99c3cbb9ec64b0",
+                "sha256:e130da06478b813173b959f7013d134865e07fbf58cc5f1a2598f99479cdac5f"
             ],
             "index": "pypi",
-            "version": "==4.80"
+            "version": "==4.81"
         },
         "scipy": {
             "hashes": [
