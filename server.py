@@ -16,7 +16,7 @@ args = parser.parse_args()
 Pyro4.config.SERIALIZERS_ACCEPTED = {'pickle'}
 Pyro4.config.SERIALIZER = 'pickle'
 
-wv = KeyedVectors.load_word2vec_format(args.w2v, binary=args.binary, unicode_errors='ignore')
+wv = KeyedVectors.load_word2vec_format(args.w2v.name, binary=args.binary, unicode_errors='ignore')
 
 if args.sims:
     wv.init_sims(replace=True)
